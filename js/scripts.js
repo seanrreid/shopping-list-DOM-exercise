@@ -5,15 +5,14 @@ const generateListButton = document.querySelector('#generateList'),
   myListDiv = document.querySelector('#myList');
 
 function generateMyList() {
-  const newText = document.createElement('p');
-  newText.innerHTML = 'Hello World';
-  myListDiv.appendChild(newText);
+  shoppingListInputs.forEach(function(input) {
+    const newText = document.createElement('p');
+    newText.innerHTML = input.value;
+    myListDiv.appendChild(newText);
+  });
 }
 
 generateListButton.addEventListener('click', function(event) {
   event.preventDefault();
-  shoppingListInputs.forEach(function(input) {
-    console.log(input.value);
-  });
   generateMyList();
 });
